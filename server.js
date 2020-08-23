@@ -36,8 +36,10 @@ if(isUseHTTPs === false) {
 
 function serverHandler(request, response) {
 
+    // add CORS
     response.setHeader('Access-Control-Allow-Origin', '*');
     response.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
+
     // to make sure we always get valid info from json file
     // even if external codes are overriding it
     config = getValuesFromConfigJson(jsonPath);
