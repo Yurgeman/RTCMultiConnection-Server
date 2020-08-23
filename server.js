@@ -3,6 +3,7 @@
 
 const fs = require('fs');
 const path = require('path');
+var cors = require('cors');
 const url = require('url');
 var httpServer = require('http');
 
@@ -34,6 +35,9 @@ if(isUseHTTPs === false) {
 }
 
 function serverHandler(request, response) {
+
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
     // to make sure we always get valid info from json file
     // even if external codes are overriding it
     config = getValuesFromConfigJson(jsonPath);
