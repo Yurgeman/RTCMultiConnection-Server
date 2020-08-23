@@ -3,7 +3,6 @@
 
 const fs = require('fs');
 const path = require('path');
-var cors = require('cors');
 const url = require('url');
 var httpServer = require('http');
 
